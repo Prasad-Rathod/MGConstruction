@@ -84,9 +84,14 @@ class PexelsAPI {
     return response.photos
   }
 
-  async getHeroImage(): Promise<PexelsPhoto> {
-    const response = await this.searchPhotos("luxury interior design living room", 1)
-    return response.photos[0]
+    async getHeroImage(): Promise<PexelsPhoto | null> {
+    try {
+      const response = await this.searchPhotos("luxury interior design living room", 1)
+      return response.photos[0] 
+    } catch (error) {
+      console.error("Failed to fetch hero image:", error)
+      return null
+    }
   }
 
   async getPortfolioImages(count = 12): Promise<PexelsPhoto[]> {

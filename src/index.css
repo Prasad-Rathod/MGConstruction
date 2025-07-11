@@ -55,11 +55,11 @@
   }
 
   .hero-text {
-    @apply text-6xl lg:text-8xl font-display font-light text-black leading-none tracking-tight;
+    @apply text-6xl lg:text-8xl  font-light text-black leading-none tracking-tight;
   }
 
   .section-title {
-    @apply text-4xl lg:text-5xl font-display font-light text-black mb-8 tracking-tight;
+    @apply text-4xl lg:text-5xl  font-light text-black mb-8 tracking-tight;
   }
 
   .image-overlay-dark {

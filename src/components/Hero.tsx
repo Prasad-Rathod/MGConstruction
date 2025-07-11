@@ -2,20 +2,25 @@
 
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import { pexelsAPI } from "../API/pexels"
 
 const Hero = () => {
   const [heroImage, setHeroImage] = useState("/placeholder.svg?height=1080&width=1920")
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const fetchHeroImage = async () => {
       try {
-        const response = await fetch("/api/pexels/hero")
-        const data = await response.json()
-        if (data.src?.large2x) {
-          setHeroImage(data.src.large2x)
+        setIsLoading(true)
+        const image = await pexelsAPI.getHeroImage()
+        if (image && image.src?.large2x) {
+          setHeroImage(image.src.large2x)
         }
       } catch (error) {
         console.error("Failed to fetch hero image:", error)
+        // Keep the placeholder image as fallback
+      } finally {
+        setIsLoading(false)
       }
     }
 
@@ -24,13 +29,26 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-end">
+      {/* Loading State */}
+      {isLoading && (
+        <div className="absolute inset-0 z-0 bg-gray-200 animate-pulse">
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
+      )}
+
       {/* Hero Image */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage || "/placeholder.svg"}
-          alt="Sophisticated Interior Design"
+          alt=""
           className="w-full h-full object-cover"
           crossOrigin="anonymous"
+          onLoad={() => setIsLoading(false)}
+          onError={() => {
+            console.error("Hero image failed to load")
+            setHeroImage("/placeholder.svg?height=1080&width=1920")
+            setIsLoading(false)
+          }}
         />
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
