@@ -40,6 +40,7 @@ class PexelsAPI {
     this.baseUrl = "https://api.pexels.com/v1"
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private async makeRequest(endpoint: string): Promise<any> {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
       headers: {

@@ -17,10 +17,6 @@ export const usePexelsImages = (query: string, count = 15) => {
         let photos: PexelsPhoto[] = []
 
         switch (query) {
-          case "hero":
-            { const heroImage = await pexelsAPI.getHeroImage()
-            photos = [heroImage]
-            break }
           case "portfolio":
             photos = await pexelsAPI.getPortfolioImages(count)
             break
