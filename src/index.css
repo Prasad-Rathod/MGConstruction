@@ -1,68 +1,98 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-  a:hover {
-    color: #747bff;
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
   }
-  button {
-    background-color: #f9f9f9;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-black text-white px-8 py-4 font-light tracking-widest text-sm uppercase hover:bg-gray-800 transition-all duration-500 border border-black;
+  }
+
+  .btn-secondary {
+    @apply border border-black text-black px-8 py-4 font-light tracking-widest text-sm uppercase hover:bg-black hover:text-white transition-all duration-500;
+  }
+
+  .btn-minimal {
+    @apply text-black font-light tracking-widest text-sm uppercase hover:opacity-60 transition-all duration-300 border-b border-transparent hover:border-black pb-1;
+  }
+
+  .section-padding {
+    @apply px-6 sm:px-12 lg:px-16 py-20 lg:py-32;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .text-sophisticated {
+    @apply text-gray-800 font-light leading-relaxed;
+  }
+
+  .nav-link {
+    @apply font-light tracking-widest text-sm uppercase text-gray-700 hover:text-black transition-colors duration-300;
+  }
+
+  .hero-text {
+    @apply text-6xl lg:text-8xl font-display font-light text-black leading-none tracking-tight;
+  }
+
+  .section-title {
+    @apply text-4xl lg:text-5xl font-display font-light text-black mb-8 tracking-tight;
+  }
+
+  .image-overlay-dark {
+    @apply relative overflow-hidden;
+  }
+
+  .image-overlay-dark::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .image-overlay-dark:hover::after {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .letter-spacing-wide {
+    letter-spacing: 0.1em;
+  }
+
+  .letter-spacing-wider {
+    letter-spacing: 0.15em;
   }
 }
