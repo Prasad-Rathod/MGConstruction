@@ -1,14 +1,36 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 const Hero = () => {
+  const [heroImage, setHeroImage] = useState("/placeholder.svg?height=1080&width=1920")
+
+  useEffect(() => {
+    const fetchHeroImage = async () => {
+      try {
+        const response = await fetch("/api/pexels/hero")
+        const data = await response.json()
+        if (data.src?.large2x) {
+          setHeroImage(data.src.large2x)
+        }
+      } catch (error) {
+        console.error("Failed to fetch hero image:", error)
+      }
+    }
+
+    fetchHeroImage()
+  }, [])
+
   return (
     <section className="relative min-h-screen flex items-end">
       {/* Hero Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hero-living-room.png"
+          src={heroImage || "/placeholder.svg"}
           alt="Sophisticated Interior Design"
           className="w-full h-full object-cover"
+          crossOrigin="anonymous"
         />
         <div className="absolute inset-0 bg-black/20"></div>
       </div>

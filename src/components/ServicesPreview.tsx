@@ -1,33 +1,26 @@
-"use client"
-
 import { Link } from "react-router-dom"
-import { usePexelsImages } from "../hooks/usePexelsImages"
-import ImageWithFallback from "./ImageWithFallback"
 
 const ServicesPreview = () => {
-  const { images, loading, error } = usePexelsImages("services", 3)
-
   const services = [
     {
       title: "Residential",
       description:
         "Curated living spaces that reflect personal style and enhance daily life through thoughtful design.",
+      image: "/placeholder.svg?height=500&width=400",
     },
     {
       title: "Commercial",
       description:
         "Professional environments that inspire productivity while maintaining sophisticated aesthetic appeal.",
+      image: "/placeholder.svg?height=500&width=400",
     },
     {
       title: "Consultation",
       description:
         "Expert guidance on design direction, space planning, and material selection for discerning clients.",
+      image: "/placeholder.svg?height=500&width=400",
     },
   ]
-
-  if (error) {
-    console.error("Services images error:", error)
-  }
 
   return (
     <section className="section-padding">
@@ -44,17 +37,11 @@ const ServicesPreview = () => {
           {services.map((service, index) => (
             <div key={index} className="group">
               <div className="image-overlay-dark mb-8">
-                {loading ? (
-                  <div className="bg-gray-200 animate-pulse w-full h-80"></div>
-                ) : (
-                  <ImageWithFallback
-                    src={images[index]?.src.large || "/placeholder.svg?height=500&width=400"}
-                    alt={`${service.title} Interior Design`}
-                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
-                    photographer={images[index]?.photographer}
-                    photographerUrl={images[index]?.photographer_url}
-                  />
-                )}
+                <img
+                  src={service.image || "/placeholder.svg"}
+                  alt={`${service.title} Interior Design`}
+                  className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
               <h3 className="text-2xl font-display font-light mb-4 tracking-tight">{service.title}</h3>
               <p className="text-sophisticated leading-relaxed">{service.description}</p>

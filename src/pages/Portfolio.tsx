@@ -54,6 +54,22 @@ const Portfolio = () => {
       description: "Spa-like bathroom renovation featuring natural stone and premium fixtures.",
       year: "2023",
     },
+    {
+      id: 7,
+      title: "Contemporary Loft",
+      category: "residential",
+      image: "/placeholder.svg?height=400&width=600",
+      description: "Industrial loft conversion with modern amenities and artistic flair.",
+      year: "2024",
+    },
+    {
+      id: 8,
+      title: "Executive Office Suite",
+      category: "commercial",
+      image: "/placeholder.svg?height=400&width=600",
+      description: "Sophisticated executive office design that commands respect and inspires confidence.",
+      year: "2023",
+    },
   ]
 
   const filters = [
@@ -71,8 +87,8 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section className="section-padding hero-gradient">
         <div className="container-custom text-center">
-          <h1 className="text-5xl lg:text-6xl font-display font-bold text-black mb-6">Our Portfolio</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-5xl lg:text-6xl font-display font-light text-black mb-6 tracking-tight">Our Portfolio</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
             Explore our collection of completed projects, each one a testament to our commitment to exceptional design
             and craftsmanship.
           </p>
@@ -80,15 +96,17 @@ const Portfolio = () => {
       </section>
 
       {/* Filter Buttons */}
-      <section className="py-8 bg-white border-b">
+      <section className="py-8 bg-white border-b border-stone-200">
         <div className="container-custom">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-8">
             {filters.map((filter) => (
               <button
                 key={filter.key}
                 onClick={() => setActiveFilter(filter.key)}
-                className={`px-6 py-2 font-medium transition-all duration-300 ${
-                  activeFilter === filter.key ? "bg-black text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                className={`font-light tracking-widest text-sm uppercase transition-all duration-300 pb-2 ${
+                  activeFilter === filter.key
+                    ? "text-black border-b border-black"
+                    : "text-gray-600 hover:text-black border-b border-transparent hover:border-gray-300"
                 }`}
               >
                 {filter.label}
@@ -103,21 +121,21 @@ const Portfolio = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <div key={project.id} className="group bg-white rounded-lg overflow-hidden shadow-lg card-hover">
-                <div className="relative overflow-hidden image-overlay">
+              <div key={project.id} className="group bg-white overflow-hidden">
+                <div className="image-overlay-dark mb-6">
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-display font-semibold">{project.title}</h3>
-                    <span className="text-sm text-gray-500">{project.year}</span>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-xl font-display font-light tracking-tight">{project.title}</h3>
+                    <span className="text-sm text-gray-500 font-light">{project.year}</span>
                   </div>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm capitalize">
+                  <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
+                  <span className="inline-block text-xs tracking-wider uppercase text-gray-400">
                     {project.category}
                   </span>
                 </div>
@@ -128,15 +146,17 @@ const Portfolio = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-black text-white">
+      <section className="section-padding bg-stone-900 text-white">
         <div className="container-custom text-center">
-          <h2 className="text-4xl font-display font-bold mb-6">Let's Create Something Amazing Together</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-display font-light mb-6 tracking-tight">
+            Let's Create Something Amazing Together
+          </h2>
+          <p className="text-xl font-light leading-relaxed mb-8 max-w-2xl mx-auto text-stone-200">
             Ready to start your own transformation? Contact us today to discuss your project and see how we can bring
             your vision to life.
           </p>
-          <a href="/contact" className="btn-secondary bg-white text-black hover:bg-gray-100">
-            Start Your Project
+          <a href="/contact" className="btn-secondary border-white text-white hover:bg-white hover:text-stone-900">
+            START YOUR PROJECT
           </a>
         </div>
       </section>
