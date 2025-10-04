@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom"
+import CommercialSpace from "../assets/images/Commercial-Space.jpeg";
+import Residential from "../assets/images/Residential.jpeg";
+import Consultation from "../assets/images/consultation.jpg";
 
 const ServicesPreview = () => {
   const services = [
@@ -6,19 +9,21 @@ const ServicesPreview = () => {
       title: "Residential",
       description:
         "Curated living spaces that reflect personal style and enhance daily life through thoughtful design.",
-      image: "/placeholder.svg?height=500&width=400",
+      image: Residential,
+
     },
     {
       title: "Commercial",
       description:
         "Professional environments that inspire productivity while maintaining sophisticated aesthetic appeal.",
-      image: "/placeholder.svg?height=500&width=400",
+      image: CommercialSpace,
+
     },
     {
       title: "Consultation",
       description:
         "Expert guidance on design direction, space planning, and material selection for discerning clients.",
-      image: "/placeholder.svg?height=500&width=400",
+      image:Consultation,
     },
   ]
 

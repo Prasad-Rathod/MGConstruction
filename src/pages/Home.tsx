@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom"
 import { ArrowRight, Award, Users, HomeIcon } from "lucide-react"
+import CommercialSpace from "../assets/images/Commercial-Space.jpeg"
+import Residential from "../assets/images/Residential.jpeg"
+
 
 const Home = () => {
   const stats = [
@@ -13,12 +16,12 @@ const Home = () => {
       title: "Residential Design",
       description:
         "Transform your home into a personalized sanctuary with our comprehensive residential design services.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: Residential,
     },
     {
       title: "Commercial Spaces",
       description: "Create inspiring work environments that boost productivity and reflect your brand identity.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: CommercialSpace,
     },
     {
       title: "Renovation & Remodeling",

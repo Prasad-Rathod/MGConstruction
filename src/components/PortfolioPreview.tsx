@@ -1,28 +1,33 @@
 "use client"
 
 import { Link } from "react-router-dom"
+import Tribeca from "../assets/images/treResidence.jpeg";
+import Penthouse from "../assets/images/Penthouse_Residence_Interior _ Maxx mistry.jpg";
+import Corporate from "../assets/images/corporateHeadquarters.jpg";
+import Luxury from "../assets/images/Townhouse.jpg";
+
 
 const PortfolioPreview = () => {
   const projects = [
     {
       title: "Tribeca Residence",
       location: "New York",
-      image: "/placeholder.svg?height=600&width=800",
+      image: Tribeca,
     },
     {
       title: "Modern Penthouse",
       location: "Manhattan",
-      image: "/placeholder.svg?height=600&width=800",
+      image: Penthouse,
     },
     {
       title: "Corporate Headquarters",
       location: "Brooklyn",
-      image: "/placeholder.svg?height=600&width=800",
+      image: Corporate,
     },
     {
       title: "Luxury Townhouse",
       location: "Upper East Side",
-      image: "/placeholder.svg?height=600&width=800",
+      image: Luxury,
     },
   ]
 
@@ -49,7 +54,7 @@ const PortfolioPreview = () => {
               </div>
               <div className="space-y-2">
                 <h3 className="text-xl font-display font-light tracking-tight">{project.title}</h3>
-                <p className="text-sophisticated text-sm tracking-wider uppercase">{project.location}</p>
+                {/* <p className="text-sophisticated text-sm tracking-wider uppercase">{project.location}</p> */}
               </div>
             </div>
           ))}

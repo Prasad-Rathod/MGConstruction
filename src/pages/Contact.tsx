@@ -37,26 +37,26 @@ const Contact = () => {
     {
       icon: "📞",
       title: "Phone",
-      details: "+1 (555) 123-4567",
-      description: "Mon-Fri 9AM-6PM",
+      details: "+91 8169768125",
+      description: "Mon-Sun 9AM-6PM",
     },
     {
       icon: "✉️",
       title: "Email",
-      details: "info@mgconstruction.com",
+      details: "invorycrescent@gmail.com",
       description: "We reply within 24 hours",
     },
     {
       icon: "📍",
       title: "Office",
-      details: "123 Design Street",
-      description: "City, State 12345",
+      details: "Maa Ambe Kripa , Plot no.C9/33, Sector-12, Kharghar",
+      description: "Navi Mumbai-410210",
     },
     {
       icon: "🕒",
       title: "Hours",
-      details: "Mon-Fri: 9AM-6PM",
-      description: "Sat: 10AM-4PM",
+      details: "Mon-Sun: 9AM-6PM",
+      // description: "Sat: 10AM-4PM",
     },
   ]
 
@@ -229,10 +229,10 @@ const Contact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+15551234567" className="btn-secondary bg-white text-black hover:bg-gray-100">
-              Call Now: (555) 123-4567
+              Call Now: +91 8169768125
             </a>
             <a
-              href="mailto:info@mgconstruction.com"
+              href="mailto:invorycrescent@gmail.com"
               className="btn-secondary border-white text-white hover:bg-white hover:text-black"
             >
               Email Us

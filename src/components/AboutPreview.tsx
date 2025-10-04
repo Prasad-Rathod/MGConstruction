@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom"
+import Studio from "../assets/images/Studio.jpeg"
+
 
 const AboutPreview = () => {
   return (
@@ -9,7 +11,7 @@ const AboutPreview = () => {
             <h2 className="section-title">The Studio</h2>
             <div className="space-y-6 text-sophisticated text-lg">
               <p>
-                MGConstruction represents the intersection of timeless design and contemporary living. Our approach is
+                M.G.Construction represents the intersection of timeless design and contemporary living. Our approach is
                 rooted in understanding the unique narrative of each space and its inhabitants.
               </p>
               <p>
@@ -28,7 +30,8 @@ const AboutPreview = () => {
             </div>
           </div>
           <div className="image-overlay-dark">
-            <img src="/placeholder.svg?height=700&width=600" alt="Design Studio" className="w-full h-auto" />
+            <img src={Studio} alt="Design Studio" className="w-full h-auto" />
+            <img src="" alt="" />
           </div>
         </div>
       </div>

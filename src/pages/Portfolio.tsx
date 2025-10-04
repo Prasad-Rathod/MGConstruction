@@ -1,6 +1,14 @@
 "use client"
 
 import { useState } from "react"
+import Corporate from "../assets/images/corporateHeadquarters.jpg";
+import Luxury from "../assets/images/Townhouse.jpg";
+import Kitchen from "../assets/images/kitchenReno.jpeg";
+import MasterBathroom from "../assets/images/masterBathroom.jpeg";
+import Minimalist from "../assets/images/ModernMinimalistHome.jpg";
+import Restaurant from "../assets/images/BoutiqueRestaurant.jpg";
+import Loft from "../assets/images/loft.jpg";
+import Executive from "../assets/images/ExecutiveOfficeSuite.jpg";
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("all")
@@ -10,7 +18,7 @@ const Portfolio = () => {
       id: 1,
       title: "Modern Minimalist Home",
       category: "residential",
-      image: "/placeholder.svg?height=400&width=600",
+      image: Minimalist,
       description: "A sleek and sophisticated residential design featuring clean lines and neutral tones.",
       year: "2024",
     },
@@ -18,7 +26,7 @@ const Portfolio = () => {
       id: 2,
       title: "Corporate Office Redesign",
       category: "commercial",
-      image: "/placeholder.svg?height=400&width=600",
+      image: Corporate,
       description: "Contemporary office space designed to boost productivity and employee satisfaction.",
       year: "2024",
     },
@@ -26,7 +34,7 @@ const Portfolio = () => {
       id: 3,
       title: "Luxury Penthouse",
       category: "residential",
-      image: "/placeholder.svg?height=400&width=600",
+      image: Luxury,
       description: "High-end penthouse renovation with custom millwork and premium finishes.",
       year: "2023",
     },
@@ -34,7 +42,7 @@ const Portfolio = () => {
       id: 4,
       title: "Boutique Restaurant",
       category: "commercial",
-      image: "/placeholder.svg?height=400&width=600",
+      image: Restaurant,
       description: "Intimate dining space with warm lighting and carefully curated materials.",
       year: "2023",
     },
@@ -42,7 +50,7 @@ const Portfolio = () => {
       id: 5,
       title: "Kitchen Renovation",
       category: "renovation",
-      image: "/placeholder.svg?height=400&width=600",
+      image: Kitchen,
       description: "Complete kitchen transformation with custom cabinetry and modern appliances.",
       year: "2024",
     },
@@ -50,7 +58,7 @@ const Portfolio = () => {
       id: 6,
       title: "Master Bathroom Remodel",
       category: "renovation",
-      image: "/placeholder.svg?height=400&width=600",
+      image: MasterBathroom,
       description: "Spa-like bathroom renovation featuring natural stone and premium fixtures.",
       year: "2023",
     },
@@ -58,7 +66,7 @@ const Portfolio = () => {
       id: 7,
       title: "Contemporary Loft",
       category: "residential",
-      image: "/placeholder.svg?height=400&width=600",
+      image: Loft,
       description: "Industrial loft conversion with modern amenities and artistic flair.",
       year: "2024",
     },
@@ -66,7 +74,7 @@ const Portfolio = () => {
       id: 8,
       title: "Executive Office Suite",
       category: "commercial",
-      image: "/placeholder.svg?height=400&width=600",
+      image: Executive,
       description: "Sophisticated executive office design that commands respect and inspires confidence.",
       year: "2023",
     },
@@ -74,6 +82,7 @@ const Portfolio = () => {
 
   const filters = [
     { key: "all", label: "All Projects" },
+    { key: "greenBuilding", label: "Green Building" },
     { key: "residential", label: "Residential" },
     { key: "commercial", label: "Commercial" },
     { key: "renovation", label: "Renovation" },

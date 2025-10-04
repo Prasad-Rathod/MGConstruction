@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="px-6 sm:px-12 lg:px-16">
         <div className="flex justify-between items-center py-8">
           <Link to="/" className="text-2xl font-light tracking-widest text-black">
-            MGCONSTRUCTION
+            M.G.CONSTRUCTION
           </Link>
 
           {/* Desktop Menu */}
